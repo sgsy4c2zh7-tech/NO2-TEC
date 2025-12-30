@@ -1,1 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daily TEC / NO₂ Heatmap</title>
 
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="left">
+      <div class="brand">Daily Heatmap</div>
+
+      <select id="layerSelect" title="Layer">
+        <option value="tec">NOAA GloTEC (TEC)</option>
+        <option value="no2">NO₂ (placeholder)</option>
+      </select>
+
+      <input id="dateInput" type="date" title="UTC date folder" />
+      <button id="todayBtn" title="Jump to latest">Latest</button>
+    </div>
+
+    <div class="right">
+      <div id="status" class="status">Loading...</div>
+      <div id="timeLabel" class="timeLabel">--:-- UTC</div>
+      <input id="timeSlider" type="range" min="0" max="0" step="1" value="0" />
+    </div>
+  </header>
+
+  <main id="map"></main>
+
+  <aside id="legend" class="legend">
+    <div class="legendTitle">Legend</div>
+    <div id="legendBody" class="legendBody">--</div>
+  </aside>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

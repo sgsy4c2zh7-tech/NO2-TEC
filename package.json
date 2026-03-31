@@ -1,1 +1,12 @@
-
+{
+  "name": "swifttec-daily-batch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Daily automation for SWIFT-TEC",
+  "scripts": {
+    "daily": "node scripts/swifttec_daily_batch.js"
+  },
+  "dependencies": {
+    "playwright": "^1.53.0"
+  }
+}

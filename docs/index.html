@@ -2352,42 +2352,7 @@ SStorm倍率（rStorm）は Mukhtarov風（季節×緯度×Kp）＋tail：
       requestDraw();
       logInfo("起動しました。BoM/NOAA入力 → Kpテキスト → 実行 を押してください。");
     }
-<script>
-  Object.defineProperties(window, {
-    gNoaaDayFrames: {
-      get: () => gNoaaDayFrames,
-      set: (v) => { gNoaaDayFrames = v; }
-    },
-    gNoaaDayTimes: {
-      get: () => gNoaaDayTimes,
-      set: (v) => { gNoaaDayTimes = v; }
-    },
-    gNoaaDayFiles: {
-      get: () => gNoaaDayFiles,
-      set: (v) => { gNoaaDayFiles = v; }
-    },
-    gNoaaDayKey: {
-      get: () => gNoaaDayKey,
-      set: (v) => { gNoaaDayKey = v; }
-    },
-    gGrid: {
-      get: () => gGrid,
-      set: (v) => { gGrid = v; }
-    },
-    gForecastFrames: {
-      get: () => gForecastFrames,
-      set: (v) => { gForecastFrames = v; }
-    },
-    gForecastTimes: {
-      get: () => gForecastTimes,
-      set: (v) => { gForecastTimes = v; }
-    },
-    gForecastStart: {
-      get: () => gForecastStart,
-      set: (v) => { gForecastStart = v; }
-    }
-  });
-</script>
+
     document.addEventListener("DOMContentLoaded", boot);
   </script>
 

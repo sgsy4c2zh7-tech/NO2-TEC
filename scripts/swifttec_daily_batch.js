@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const http = require("http");
-const fs = require("fs");
 const fsp = require("fs/promises");
 const path = require("path");
 const { chromium } = require("playwright");
@@ -143,6 +142,17 @@ async function pruneOldArchives(nowUtc = new Date(), keepDays = 365) {
   }
 }
 
+async function readJsonSafe(filePath) {
+  try {
+    const text = await fsp.readFile(filePath, "utf8");
+    if (!text || !text.trim()) return null;
+    return JSON.parse(text);
+  } catch (err) {
+    console.warn(`[history] skip invalid JSON: ${filePath} :: ${err.message}`);
+    return null;
+  }
+}
+
 async function buildHistoryIndex() {
   const items = [];
 
@@ -161,27 +171,32 @@ async function buildHistoryIndex() {
       const dayKey = dayEnt.name;
       const dir = path.join(yearDir, dayKey);
 
-      const summaryPath = path.join(dir, "summary.json");
-      const metaPath = path.join(dir, "meta.json");
-      const csvPath = path.join(dir, "tec_4day.csv");
+      const summaryPathFs = path.join(dir, "summary.json");
+      const metaPathFs = path.join(dir, "meta.json");
+      const csvPathFs = path.join(dir, "tec_4day.csv");
 
-      if (!(await pathExists(summaryPath)) || !(await pathExists(metaPath)) || !(await pathExists(csvPath))) {
+      if (!(await pathExists(summaryPathFs)) || !(await pathExists(metaPathFs)) || !(await pathExists(csvPathFs))) {
         continue;
       }
 
-      const summary = JSON.parse(await fsp.readFile(summaryPath, "utf8"));
-      const meta = JSON.parse(await fsp.readFile(metaPath, "utf8"));
+      const summary = await readJsonSafe(summaryPathFs);
+      const meta = await readJsonSafe(metaPathFs);
+
+      if (!summary || !meta) {
+        console.warn(`[history] skip broken archive: ${dir}`);
+        continue;
+      }
 
       items.push({
         dayKey,
         summaryPath: `./archive/${yearEnt.name}/${dayKey}/summary.json`,
         metaPath: `./archive/${yearEnt.name}/${dayKey}/meta.json`,
         csvPath: `./archive/${yearEnt.name}/${dayKey}/tec_4day.csv`,
-        forecastStartUtc: meta.forecastStartUtc,
-        forecastEndUtc: meta.forecastEndUtc,
-        source: meta.source,
-        noaaDayKey: meta.noaaDayKey,
-        overall: summary.overall
+        forecastStartUtc: meta.forecastStartUtc || null,
+        forecastEndUtc: meta.forecastEndUtc || null,
+        source: meta.source || null,
+        noaaDayKey: meta.noaaDayKey || null,
+        overall: summary.overall || null
       });
     }
   }
@@ -269,8 +284,12 @@ async function main() {
 
     await pruneOldArchives(new Date(), 365);
 
-    const historyIndex = await buildHistoryIndex();
-    await writeJson(path.join(DATA_ROOT, "history.json"), historyIndex);
+    try {
+      const historyIndex = await buildHistoryIndex();
+      await writeJson(path.join(DATA_ROOT, "history.json"), historyIndex);
+    } catch (err) {
+      console.warn("[history] history.json generation skipped:", err.message);
+    }
 
     console.log("SWIFT-TEC daily batch completed successfully.");
     console.log(`Archive written to: docs/data/archive/${year}/${runDayKey}/`);

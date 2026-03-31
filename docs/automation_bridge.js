@@ -83,6 +83,7 @@
     if (!window.gGrid || !window.gForecastFrames?.length || !window.gForecastTimes?.length) {
       throw new Error("Forecast frames are not ready");
     }
+
     const cfg = typeof window.getConfigFromUI === "function"
       ? window.getConfigFromUI()
       : { kL1: 0.16 };
@@ -175,7 +176,12 @@
     }
 
     await window.fetchNoaaGloTecPrevDay12_2hour(false);
-    await waitFor(() => Array.isArray(window.gNoaaDayFrames) && window.gNoaaDayFrames.length === 12, 180000, 500, "NOAA TEC frames");
+    await waitFor(
+      () => Array.isArray(window.gNoaaDayFrames) && window.gNoaaDayFrames.length === 12,
+      180000,
+      500,
+      "NOAA TEC frames"
+    );
 
     await window.fetchNoaa3DayGeomagToTextarea();
     await waitFor(() => {

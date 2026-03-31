@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>SWIFT-TEC v3 – TEC Forecast & Verification Tool (Leaflet版, 4日予報・加算＋Base抽出 / NOAA:2時間×12枚)</title>
 
-  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
   <style>
@@ -192,7 +191,6 @@
     }
   </style>
 
-  <!-- パスワード保護（automation=1 の時はスキップ） -->
   <script>
     (function () {
       const params = new URLSearchParams(location.search);
@@ -224,12 +222,11 @@
         </div>
         <div class="small">
           ・入力TECは <b>BoM</b> or <b>NOAA(GloTEC)</b> を選択<br>
-          ・Base抽出＋加算モデル（要件の式）に更新：<b>ΔStorm = kStorm * BaseTEC * (rStorm - 1)</b><br>
-          ・SStorm（rStorm）は <b>Mukhtarovベース（季節・緯度・Kp依存）＋スーパーストーム尾部 tail</b> を実装（簡易版禁止）<br>
+          ・Base抽出＋加算モデル：<b>ΔStorm = kStorm * BaseTEC * (rStorm - 1)</b><br>
           ・NOAA入力は <b>解析前日(UTC)の1日分</b> をAPI取得（<b>2時間おき12枚</b>）→ 2°×5°格子化<br>
-          ・4日予報では NOAA12枚を <b>UTC時刻-of-dayで日周リピート</b>（模様が時間で動く）<br>
-          ・今回の修正：<b>2時間→30分は線形補間</b>、BaseKp/Flareも<b>日周リピート＋線形補間</b><br>
-          ・今回の修正：<b>NOAA 3-day Forecast の Kp index breakdown を直接パース</b><br>
+          ・NOAA12枚は <b>3枚ずつ×4回</b> に分けて取得して安定化<br>
+          ・4日予報では NOAA12枚を <b>UTC時刻-of-dayで日周リピート</b><br>
+          ・2時間→30分は線形補間、BaseKp/Flareも日周リピート＋線形補間
         </div>
       </div>
 
@@ -270,7 +267,8 @@
         </div>
 
         <div class="small" style="margin-top:6px;">
-          ※一覧JSON（geojson_2d_urt.json）から前日(UTC) 00,02,…,22 の近傍ファイルを自動選定。<br>
+          ※一覧JSONから前日(UTC) 00,02,…,22 の近傍ファイルを自動選定。<br>
+          ※12枚は 3枚ずつ×4回 に分けて取得。<br>
           ※UIのtextareaはデバッグ9枠だけ表示（予報は12枠を内部使用）。
         </div>
 
@@ -615,20 +613,46 @@
     const NOAA_3DAY_FORECAST_TEXT_URL = "https://services.swpc.noaa.gov/text/3-day-forecast.txt";
     const NOAA_PLANETARY_K_INDEX_URL = "https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json";
     const NOAA_XRAY_FLARES_LATEST_URL = "https://services.swpc.noaa.gov/json/goes/primary/xray-flares-latest.json";
-
     const NOAA_GLOTEC_INDEX_URL = "https://services.swpc.noaa.gov/products/glotec/geojson_2d_urt.json";
     const NOAA_GLOTEC_BASE_URL  = "https://services.swpc.noaa.gov/products/glotec/geojson_2d_urt/";
 
-    async function fetchText(url) {
-      const res = await fetch(url, { cache: "no-store" });
+    async function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function fetchWithTimeout(url, options = {}, timeoutMs = 90000) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), timeoutMs);
+
+      try {
+        const res = await fetch(url, {
+          ...options,
+          cache: "no-store",
+          signal: controller.signal
+        });
+        return res;
+      } catch (err) {
+        if (err && err.name === "AbortError") {
+          throw new Error(`Timeout ${timeoutMs}ms for ${url}`);
+        }
+        throw err;
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+
+    async function fetchText(url, timeoutMs = 90000) {
+      const res = await fetchWithTimeout(url, {}, timeoutMs);
       if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
       return await res.text();
     }
-    async function fetchJson(url) {
-      const res = await fetch(url, { cache: "no-store" });
+
+    async function fetchJson(url, timeoutMs = 90000) {
+      const res = await fetchWithTimeout(url, {}, timeoutMs);
       if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
       return await res.json();
     }
+
     function setStatus(id, msg) {
       const el = document.getElementById(id);
       if (el) el.textContent = msg || "";
@@ -733,21 +757,37 @@
       return best;
     }
 
-    async function fetchAllWithLimit(urls, limit=6) {
-      const out = new Array(urls.length);
-      let idx = 0;
+    function chunkArray(arr, size) {
+      const out = [];
+      for (let i = 0; i < arr.length; i += size) {
+        out.push(arr.slice(i, i + size));
+      }
+      return out;
+    }
 
-      async function worker() {
-        while (idx < urls.length) {
-          const i = idx++;
-          out[i] = await fetchText(urls[i]);
+    async function fetchTextsWithRetry(urls, label = "", timeoutMs = 90000, retries = 2) {
+      let lastErr = null;
+
+      for (let attempt = 1; attempt <= retries + 1; attempt++) {
+        try {
+          const texts = await Promise.all(
+            urls.map(async (url) => {
+              const res = await fetchWithTimeout(url, {}, timeoutMs);
+              if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+              return await res.text();
+            })
+          );
+          return texts;
+        } catch (err) {
+          lastErr = err;
+          console.warn(`fetchTextsWithRetry failed [${label}] attempt ${attempt}:`, err);
+          if (attempt <= retries) {
+            await sleep(3000);
+          }
         }
       }
 
-      const workers = [];
-      for (let k=0;k<Math.min(limit, urls.length); k++) workers.push(worker());
-      await Promise.all(workers);
-      return out;
+      throw lastErr || new Error(`fetchTextsWithRetry failed [${label}]`);
     }
 
     function renderNoaa12Table() {
@@ -781,7 +821,7 @@
         const maxDiffMin  = 90;
 
         setStatus("noaaTecStatus", "NOAA GloTEC 一覧(JSON)取得中…");
-        const idx = await fetchJson(NOAA_GLOTEC_INDEX_URL);
+        const idx = await fetchJson(NOAA_GLOTEC_INDEX_URL, 90000);
 
         const listRaw = normalizeGloTecIndexJson(idx).map(toPathString).filter(Boolean);
         const list = listRaw.filter(x => {
@@ -791,7 +831,7 @@
 
         if (!list.length) {
           const hint = Array.isArray(listRaw) ? listRaw.slice(0, 8).join(" / ") : "";
-          throw new Error("一覧JSONから geojson が見つかりません（仕様変更/障害の可能性）。先頭例: " + hint);
+          throw new Error("一覧JSONから geojson が見つかりません。先頭例: " + hint);
         }
 
         const files = buildFileObjects(list);
@@ -801,6 +841,7 @@
         if (!meta) throw new Error("前日ターゲット生成に失敗");
 
         const { targets, prevKey } = meta;
+        setStatus("noaaTecStatus", `一覧取得OK: ${list.length} files / target=${prevKey}`);
 
         const picks = [];
         for (const t of targets) picks.push(nearestFileForTime(files, t, maxDiffMin));
@@ -814,7 +855,7 @@
 
         if (picks.some(x=>!x)) {
           const miss = picks.filter(x=>!x).length;
-          throw new Error(`前日(UTC)の${targets.length}枠のうち ${miss} 枠が取得不能（一覧欠損/メンテ等）`);
+          throw new Error(`前日(UTC)の${targets.length}枠のうち ${miss} 枠が取得不能`);
         }
 
         if (gNoaaDayKey === prevKey && gNoaaDayFrames && gNoaaDayFrames.length === targets.length) {
@@ -824,10 +865,34 @@
           return;
         }
 
-        setStatus("noaaTecStatus", `前日(UTC)=${prevKey} を${targets.length}枚取得中…（2時間おき）`);
-
         const urls = picks.map(x => x.url);
-        const texts = await fetchAllWithLimit(urls, 6);
+        const chunks = chunkArray(urls.map((url, i) => ({ url, i })), 3);
+        const texts = new Array(urls.length);
+
+        for (let batchIndex = 0; batchIndex < chunks.length; batchIndex++) {
+          const batch = chunks[batchIndex];
+          setStatus(
+            "noaaTecStatus",
+            `個別GeoJSON取得中... batch ${batchIndex + 1}/${chunks.length} (${batch.map(x => x.i + 1).join(",")})`
+          );
+
+          const batchUrls = batch.map(x => x.url);
+          const batchTexts = await fetchTextsWithRetry(
+            batchUrls,
+            `batch-${batchIndex + 1}`,
+            90000,
+            2
+          );
+
+          for (let k = 0; k < batch.length; k++) {
+            texts[batch[k].i] = batchTexts[k];
+          }
+
+          setStatus("noaaTecStatus", `batch ${batchIndex + 1}/${chunks.length} 完了`);
+          await sleep(1000);
+        }
+
+        setStatus("noaaTecStatus", "GeoJSON取得完了。格子化中…");
 
         const frames = [];
         for (let i=0;i<targets.length;i++) {
@@ -850,7 +915,7 @@
 
         if (saveAfter) saveBomInputs();
 
-        setStatus("noaaTecStatus", `NOAA 前日(UTC)=${prevKey} を${targets.length}枚メモリ保持OK（予報は日周として使用/線形補間）`);
+        setStatus("noaaTecStatus", `NOAA 前日(UTC)=${prevKey} を${targets.length}枚メモリ保持OK`);
         renderNoaa12Table();
         fillForecastStartCandidates();
       } catch (e) {
@@ -1922,7 +1987,6 @@
         gForecastTimes  = [];
 
         const flarePred = getDeepFlareInputs();
-
         const dbgMix = !!document.getElementById("dbgNoaaMix").checked;
         let mixInfo = "";
 
@@ -1931,11 +1995,8 @@
           gForecastTimes.push(t);
 
           let inputFrame = null;
-          if (input.source === "noaa") {
-            inputFrame = noaaTecTodFrameAt(tecTod, t);
-          } else {
-            inputFrame = pickBomFrameByUtcTod(input.frames, input.times, t);
-          }
+          if (input.source === "noaa") inputFrame = noaaTecTodFrameAt(tecTod, t);
+          else inputFrame = pickBomFrameByUtcTod(input.frames, input.times, t);
 
           const kpF = (gKpSeries[s] && isFinite(gKpSeries[s].kp)) ? gKpSeries[s].kp : 3.0;
 
@@ -1946,9 +2007,7 @@
           };
 
           const mFlPred = flareMultiplier(flarePred.Px, flarePred.Pm, cfg);
-
           const outGrid = Array.from({length:gGrid.nLat}, ()=>Array.from({length:gGrid.nLon}, ()=>0));
-
           const baseHelper = computeBaseFromInput(0, kpB, flareB, cfg);
           const mFlBase = baseHelper.mFlBase;
 
@@ -2180,7 +2239,6 @@
 
           let val = frame[i][j];
           if (!isFinite(val)) val = 0;
-
           if (mapMode === "gps") val = val * cfg.kL1;
 
           const col = valueToColor(val, scale);
@@ -2239,20 +2297,15 @@
 入力TEC（BoM/NOAAの解析前日）を、Base用Kp/フレアで「静穏へ戻す」：
   BaseTEC = InputTEC / ( kBase * rStorm(lat,t,KpB) * mFlare(BaseFlare) )
 
-嵐成分（要件式）：
+嵐成分：
   ΔStorm = kStorm * BaseTEC * ( rStorm(lat,t,KpF) - 1 )
 
-フレア成分（DeepFlareNet 9領域の平均確率から倍率）：
+フレア成分：
   mFlarePred = 1 + β_flare*(k_X*Px + k_M*Pm)   [Px,Pmは0..1]
   ΔFlare = BaseTEC * ( mFlarePred - 1 )
 
 最終TEC：
   TEC_forecast = BaseTEC + ΔStorm + ΔFlare
-
-SStorm倍率（rStorm）は Mukhtarov風（季節×緯度×Kp）＋tail：
-  rStorm = 1 + (r0(Kp)-1) * (a + b*Season(month,σm)*Lat(lat,σlat))  そして tail(Kp;Kc,w,A0) を乗算
-  r0(Kp) = 1 + 0.02*Kp^2 + 0.01*Kp
-  tail = 1 + A0 * logistic((Kp-Kc)/w)^2   （useTail=${cfg.useTail}）
 
 現在の係数：
   kBase=${cfg.kBase}, kStorm=${cfg.kStorm}, β=${cfg.betaFlare}, kX=${cfg.kX}, kM=${cfg.kM}, kL1=${cfg.kL1}
@@ -2352,6 +2405,17 @@ SStorm倍率（rStorm）は Mukhtarov風（季節×緯度×Kp）＋tail：
       requestDraw();
       logInfo("起動しました。BoM/NOAA入力 → Kpテキスト → 実行 を押してください。");
     }
+
+    Object.defineProperties(window, {
+      gNoaaDayFrames: { get: () => gNoaaDayFrames, set: v => { gNoaaDayFrames = v; } },
+      gNoaaDayTimes:  { get: () => gNoaaDayTimes,  set: v => { gNoaaDayTimes  = v; } },
+      gNoaaDayFiles:  { get: () => gNoaaDayFiles,  set: v => { gNoaaDayFiles  = v; } },
+      gNoaaDayKey:    { get: () => gNoaaDayKey,    set: v => { gNoaaDayKey    = v; } },
+      gGrid:          { get: () => gGrid,          set: v => { gGrid          = v; } },
+      gForecastFrames:{ get: () => gForecastFrames,set: v => { gForecastFrames= v; } },
+      gForecastTimes: { get: () => gForecastTimes, set: v => { gForecastTimes = v; } },
+      gForecastStart: { get: () => gForecastStart, set: v => { gForecastStart = v; } }
+    });
 
     document.addEventListener("DOMContentLoaded", boot);
   </script>

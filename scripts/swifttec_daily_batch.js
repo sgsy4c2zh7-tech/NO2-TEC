@@ -163,7 +163,11 @@ async function buildHistoryIndex() {
 
       const summaryPath = path.join(dir, "summary.json");
       const metaPath = path.join(dir, "meta.json");
-      if (!(await pathExists(summaryPath)) || !(await pathExists(metaPath))) continue;
+      const csvPath = path.join(dir, "tec_4day.csv");
+
+      if (!(await pathExists(summaryPath)) || !(await pathExists(metaPath)) || !(await pathExists(csvPath))) {
+        continue;
+      }
 
       const summary = JSON.parse(await fsp.readFile(summaryPath, "utf8"));
       const meta = JSON.parse(await fsp.readFile(metaPath, "utf8"));

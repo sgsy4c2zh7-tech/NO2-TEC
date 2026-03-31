@@ -158,6 +158,48 @@
     };
   }
 
+  async function fetchNoaaTecWithRetry(maxRetries = 3) {
+    let lastError = null;
+
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+      try {
+        const statusEl = document.getElementById("noaaTecStatus");
+        if (statusEl) {
+          statusEl.textContent = `NOAA TEC取得開始... attempt ${attempt}/${maxRetries}`;
+        }
+
+        await window.fetchNoaaGloTecPrevDay12_2hour(false);
+
+        await waitFor(() => {
+          const ok = Array.isArray(window.gNoaaDayFrames) && window.gNoaaDayFrames.length === 12;
+          if (ok) return true;
+
+          const status = document.getElementById("noaaTecStatus")?.textContent || "";
+          if (status.startsWith("失敗:")) {
+            throw new Error(status);
+          }
+          return false;
+        }, 420000, 1000, `NOAA TEC frames attempt ${attempt}`);
+
+        return true;
+      } catch (err) {
+        lastError = err;
+        console.warn(`NOAA TEC attempt ${attempt} failed:`, err);
+
+        const statusEl = document.getElementById("noaaTecStatus");
+        if (statusEl) {
+          statusEl.textContent = `NOAA TEC取得リトライ待機中... attempt ${attempt}/${maxRetries}`;
+        }
+
+        if (attempt < maxRetries) {
+          await sleep(10000);
+        }
+      }
+    }
+
+    throw lastError || new Error("NOAA TEC取得失敗");
+  }
+
   async function prepareInputs() {
     setValue("tecSourceSelect", "noaa");
     setChecked("dbgNoaaMix", false);
@@ -175,28 +217,41 @@
       throw new Error("fetchNoaaXrayFlareLatestToBase not found");
     }
 
-    await window.fetchNoaaGloTecPrevDay12_2hour(false);
-    await waitFor(
-      () => Array.isArray(window.gNoaaDayFrames) && window.gNoaaDayFrames.length === 12,
-      180000,
-      500,
-      "NOAA TEC frames"
-    );
+    await fetchNoaaTecWithRetry(3);
 
     await window.fetchNoaa3DayGeomagToTextarea();
     await waitFor(() => {
       const el = document.getElementById("noaaKpText");
-      return !!el && !!el.value && el.value.trim().length > 0;
-    }, 120000, 500, "NOAA 3-day Kp text");
+      const ok = !!el && !!el.value && el.value.trim().length > 0;
+      if (ok) return true;
+
+      const status = document.getElementById("noaa3dayStatus")?.textContent || "";
+      if (status.startsWith("失敗:")) {
+        throw new Error(`NOAA 3-day Kp取得失敗: ${status}`);
+      }
+      return false;
+    }, 180000, 1000, "NOAA 3-day Kp text");
 
     await window.fetchNoaaPlanetaryKIndex1DayToBase();
     await waitFor(() => {
       const el = document.getElementById("baseKpJson");
-      return !!el && !!el.value && el.value.trim().length > 0;
-    }, 120000, 500, "Base Kp JSON");
+      const ok = !!el && !!el.value && el.value.trim().length > 0;
+      if (ok) return true;
+
+      const status = document.getElementById("kindexStatus")?.textContent || "";
+      if (status.startsWith("失敗:")) {
+        throw new Error(`Base Kp取得失敗: ${status}`);
+      }
+      return false;
+    }, 180000, 1000, "Base Kp JSON");
 
     await window.fetchNoaaXrayFlareLatestToBase();
-    await sleep(1000);
+    await sleep(2000);
+
+    const flareStatus = document.getElementById("xrayflareStatus")?.textContent || "";
+    if (flareStatus.startsWith("失敗:")) {
+      throw new Error(`Base flare取得失敗: ${flareStatus}`);
+    }
 
     if (typeof window.fillForecastStartCandidates === "function") {
       window.fillForecastStartCandidates();

@@ -1,0 +1,1558 @@
+{
+  "runDayKey": "2026-04-16",
+  "forecastStartUtc": "2026-04-15T00:00:00Z",
+  "forecastEndUtc": "2026-04-19T00:00:00Z",
+  "overall": {
+    "minTec": 1.028,
+    "maxTec": 138.21,
+    "maxTecTimeUtc": "2026-04-18T02:00:00Z",
+    "frameCount": 193,
+    "gridPointCount": 6552
+  },
+  "frames": [
+    {
+      "step": 0,
+      "timeUtc": "2026-04-15T00:00:00Z",
+      "minTec": 2.065,
+      "maxTec": 73.263,
+      "meanTec": 19.737,
+      "count": 6552
+    },
+    {
+      "step": 1,
+      "timeUtc": "2026-04-15T00:30:00Z",
+      "minTec": 2.068,
+      "maxTec": 70.981,
+      "meanTec": 19.906,
+      "count": 6552
+    },
+    {
+      "step": 2,
+      "timeUtc": "2026-04-15T01:00:00Z",
+      "minTec": 2.068,
+      "maxTec": 70.734,
+      "meanTec": 20.075,
+      "count": 6552
+    },
+    {
+      "step": 3,
+      "timeUtc": "2026-04-15T01:30:00Z",
+      "minTec": 2.068,
+      "maxTec": 73.292,
+      "meanTec": 20.243,
+      "count": 6552
+    },
+    {
+      "step": 4,
+      "timeUtc": "2026-04-15T02:00:00Z",
+      "minTec": 2.067,
+      "maxTec": 77.421,
+      "meanTec": 20.412,
+      "count": 6552
+    },
+    {
+      "step": 5,
+      "timeUtc": "2026-04-15T02:30:00Z",
+      "minTec": 2.067,
+      "maxTec": 75.098,
+      "meanTec": 20.674,
+      "count": 6552
+    },
+    {
+      "step": 6,
+      "timeUtc": "2026-04-15T03:00:00Z",
+      "minTec": 2.06,
+      "maxTec": 74.069,
+      "meanTec": 20.887,
+      "count": 6552
+    },
+    {
+      "step": 7,
+      "timeUtc": "2026-04-15T03:30:00Z",
+      "minTec": 1.545,
+      "maxTec": 74.828,
+      "meanTec": 21.148,
+      "count": 6552
+    },
+    {
+      "step": 8,
+      "timeUtc": "2026-04-15T04:00:00Z",
+      "minTec": 1.028,
+      "maxTec": 77.135,
+      "meanTec": 21.409,
+      "count": 6552
+    },
+    {
+      "step": 9,
+      "timeUtc": "2026-04-15T04:30:00Z",
+      "minTec": 1.287,
+      "maxTec": 77.649,
+      "meanTec": 21.596,
+      "count": 6552
+    },
+    {
+      "step": 10,
+      "timeUtc": "2026-04-15T05:00:00Z",
+      "minTec": 1.545,
+      "maxTec": 78.163,
+      "meanTec": 21.782,
+      "count": 6552
+    },
+    {
+      "step": 11,
+      "timeUtc": "2026-04-15T05:30:00Z",
+      "minTec": 1.802,
+      "maxTec": 78.678,
+      "meanTec": 21.969,
+      "count": 6552
+    },
+    {
+      "step": 12,
+      "timeUtc": "2026-04-15T06:00:00Z",
+      "minTec": 1.029,
+      "maxTec": 82.392,
+      "meanTec": 22.156,
+      "count": 6552
+    },
+    {
+      "step": 13,
+      "timeUtc": "2026-04-15T06:30:00Z",
+      "minTec": 1.802,
+      "maxTec": 81.593,
+      "meanTec": 22.191,
+      "count": 6552
+    },
+    {
+      "step": 14,
+      "timeUtc": "2026-04-15T07:00:00Z",
+      "minTec": 2.575,
+      "maxTec": 80.82,
+      "meanTec": 22.226,
+      "count": 6552
+    },
+    {
+      "step": 15,
+      "timeUtc": "2026-04-15T07:30:00Z",
+      "minTec": 3.099,
+      "maxTec": 80.048,
+      "meanTec": 22.261,
+      "count": 6552
+    },
+    {
+      "step": 16,
+      "timeUtc": "2026-04-15T08:00:00Z",
+      "minTec": 3.094,
+      "maxTec": 81.249,
+      "meanTec": 22.297,
+      "count": 6552
+    },
+    {
+      "step": 17,
+      "timeUtc": "2026-04-15T08:30:00Z",
+      "minTec": 3.096,
+      "maxTec": 80.992,
+      "meanTec": 22.183,
+      "count": 6552
+    },
+    {
+      "step": 18,
+      "timeUtc": "2026-04-15T09:00:00Z",
+      "minTec": 3.098,
+      "maxTec": 80.831,
+      "meanTec": 22.087,
+      "count": 6552
+    },
+    {
+      "step": 19,
+      "timeUtc": "2026-04-15T09:30:00Z",
+      "minTec": 3.098,
+      "maxTec": 80.573,
+      "meanTec": 21.974,
+      "count": 6552
+    },
+    {
+      "step": 20,
+      "timeUtc": "2026-04-15T10:00:00Z",
+      "minTec": 3.093,
+      "maxTec": 80.316,
+      "meanTec": 21.86,
+      "count": 6552
+    },
+    {
+      "step": 21,
+      "timeUtc": "2026-04-15T10:30:00Z",
+      "minTec": 3.1,
+      "maxTec": 79.544,
+      "meanTec": 21.691,
+      "count": 6552
+    },
+    {
+      "step": 22,
+      "timeUtc": "2026-04-15T11:00:00Z",
+      "minTec": 3.1,
+      "maxTec": 78.771,
+      "meanTec": 21.522,
+      "count": 6552
+    },
+    {
+      "step": 23,
+      "timeUtc": "2026-04-15T11:30:00Z",
+      "minTec": 3.1,
+      "maxTec": 78.514,
+      "meanTec": 21.353,
+      "count": 6552
+    },
+    {
+      "step": 24,
+      "timeUtc": "2026-04-15T12:00:00Z",
+      "minTec": 3.102,
+      "maxTec": 78.422,
+      "meanTec": 21.215,
+      "count": 6552
+    },
+    {
+      "step": 25,
+      "timeUtc": "2026-04-15T12:30:00Z",
+      "minTec": 4.136,
+      "maxTec": 76.358,
+      "meanTec": 21.157,
+      "count": 6552
+    },
+    {
+      "step": 26,
+      "timeUtc": "2026-04-15T13:00:00Z",
+      "minTec": 4.136,
+      "maxTec": 74.295,
+      "meanTec": 21.1,
+      "count": 6552
+    },
+    {
+      "step": 27,
+      "timeUtc": "2026-04-15T13:30:00Z",
+      "minTec": 4.136,
+      "maxTec": 73.263,
+      "meanTec": 21.042,
+      "count": 6552
+    },
+    {
+      "step": 28,
+      "timeUtc": "2026-04-15T14:00:00Z",
+      "minTec": 4.133,
+      "maxTec": 72.235,
+      "meanTec": 20.984,
+      "count": 6552
+    },
+    {
+      "step": 29,
+      "timeUtc": "2026-04-15T14:30:00Z",
+      "minTec": 3.875,
+      "maxTec": 69.909,
+      "meanTec": 20.985,
+      "count": 6552
+    },
+    {
+      "step": 30,
+      "timeUtc": "2026-04-15T15:00:00Z",
+      "minTec": 3.617,
+      "maxTec": 67.587,
+      "meanTec": 20.986,
+      "count": 6552
+    },
+    {
+      "step": 31,
+      "timeUtc": "2026-04-15T15:30:00Z",
+      "minTec": 2.842,
+      "maxTec": 65.266,
+      "meanTec": 20.986,
+      "count": 6552
+    },
+    {
+      "step": 32,
+      "timeUtc": "2026-04-15T16:00:00Z",
+      "minTec": 2.067,
+      "maxTec": 67.075,
+      "meanTec": 20.987,
+      "count": 6552
+    },
+    {
+      "step": 33,
+      "timeUtc": "2026-04-15T16:30:00Z",
+      "minTec": 2.067,
+      "maxTec": 65.785,
+      "meanTec": 20.982,
+      "count": 6552
+    },
+    {
+      "step": 34,
+      "timeUtc": "2026-04-15T17:00:00Z",
+      "minTec": 2.067,
+      "maxTec": 66.043,
+      "meanTec": 20.977,
+      "count": 6552
+    },
+    {
+      "step": 35,
+      "timeUtc": "2026-04-15T17:30:00Z",
+      "minTec": 2.067,
+      "maxTec": 68.365,
+      "meanTec": 20.972,
+      "count": 6552
+    },
+    {
+      "step": 36,
+      "timeUtc": "2026-04-15T18:00:00Z",
+      "minTec": 2.067,
+      "maxTec": 71.276,
+      "meanTec": 20.967,
+      "count": 6552
+    },
+    {
+      "step": 37,
+      "timeUtc": "2026-04-15T18:30:00Z",
+      "minTec": 2.068,
+      "maxTec": 73.342,
+      "meanTec": 20.89,
+      "count": 6552
+    },
+    {
+      "step": 38,
+      "timeUtc": "2026-04-15T19:00:00Z",
+      "minTec": 2.068,
+      "maxTec": 75.408,
+      "meanTec": 20.813,
+      "count": 6552
+    },
+    {
+      "step": 39,
+      "timeUtc": "2026-04-15T19:30:00Z",
+      "minTec": 1.551,
+      "maxTec": 77.977,
+      "meanTec": 20.736,
+      "count": 6552
+    },
+    {
+      "step": 40,
+      "timeUtc": "2026-04-15T20:00:00Z",
+      "minTec": 1.034,
+      "maxTec": 81.563,
+      "meanTec": 20.658,
+      "count": 6552
+    },
+    {
+      "step": 41,
+      "timeUtc": "2026-04-15T20:30:00Z",
+      "minTec": 1.551,
+      "maxTec": 81.821,
+      "meanTec": 20.591,
+      "count": 6552
+    },
+    {
+      "step": 42,
+      "timeUtc": "2026-04-15T21:00:00Z",
+      "minTec": 2.066,
+      "maxTec": 81.934,
+      "meanTec": 20.493,
+      "count": 6552
+    },
+    {
+      "step": 43,
+      "timeUtc": "2026-04-15T21:30:00Z",
+      "minTec": 2.066,
+      "maxTec": 82.191,
+      "meanTec": 20.426,
+      "count": 6552
+    },
+    {
+      "step": 44,
+      "timeUtc": "2026-04-15T22:00:00Z",
+      "minTec": 2.06,
+      "maxTec": 82.449,
+      "meanTec": 20.359,
+      "count": 6552
+    },
+    {
+      "step": 45,
+      "timeUtc": "2026-04-15T22:30:00Z",
+      "minTec": 2.06,
+      "maxTec": 82.449,
+      "meanTec": 20.359,
+      "count": 6552
+    },
+    {
+      "step": 46,
+      "timeUtc": "2026-04-15T23:00:00Z",
+      "minTec": 2.06,
+      "maxTec": 82.449,
+      "meanTec": 20.359,
+      "count": 6552
+    },
+    {
+      "step": 47,
+      "timeUtc": "2026-04-15T23:30:00Z",
+      "minTec": 2.06,
+      "maxTec": 82.449,
+      "meanTec": 20.359,
+      "count": 6552
+    },
+    {
+      "step": 48,
+      "timeUtc": "2026-04-16T00:00:00Z",
+      "minTec": 2.065,
+      "maxTec": 73.263,
+      "meanTec": 19.737,
+      "count": 6552
+    },
+    {
+      "step": 49,
+      "timeUtc": "2026-04-16T00:30:00Z",
+      "minTec": 2.068,
+      "maxTec": 70.981,
+      "meanTec": 19.906,
+      "count": 6552
+    },
+    {
+      "step": 50,
+      "timeUtc": "2026-04-16T01:00:00Z",
+      "minTec": 2.068,
+      "maxTec": 70.734,
+      "meanTec": 20.075,
+      "count": 6552
+    },
+    {
+      "step": 51,
+      "timeUtc": "2026-04-16T01:30:00Z",
+      "minTec": 2.068,
+      "maxTec": 73.292,
+      "meanTec": 20.243,
+      "count": 6552
+    },
+    {
+      "step": 52,
+      "timeUtc": "2026-04-16T02:00:00Z",
+      "minTec": 2.067,
+      "maxTec": 77.421,
+      "meanTec": 20.412,
+      "count": 6552
+    },
+    {
+      "step": 53,
+      "timeUtc": "2026-04-16T02:30:00Z",
+      "minTec": 2.067,
+      "maxTec": 75.098,
+      "meanTec": 20.674,
+      "count": 6552
+    },
+    {
+      "step": 54,
+      "timeUtc": "2026-04-16T03:00:00Z",
+      "minTec": 2.06,
+      "maxTec": 74.069,
+      "meanTec": 20.887,
+      "count": 6552
+    },
+    {
+      "step": 55,
+      "timeUtc": "2026-04-16T03:30:00Z",
+      "minTec": 1.545,
+      "maxTec": 74.828,
+      "meanTec": 21.148,
+      "count": 6552
+    },
+    {
+      "step": 56,
+      "timeUtc": "2026-04-16T04:00:00Z",
+      "minTec": 1.028,
+      "maxTec": 77.135,
+      "meanTec": 21.409,
+      "count": 6552
+    },
+    {
+      "step": 57,
+      "timeUtc": "2026-04-16T04:30:00Z",
+      "minTec": 1.287,
+      "maxTec": 77.649,
+      "meanTec": 21.596,
+      "count": 6552
+    },
+    {
+      "step": 58,
+      "timeUtc": "2026-04-16T05:00:00Z",
+      "minTec": 1.545,
+      "maxTec": 78.163,
+      "meanTec": 21.782,
+      "count": 6552
+    },
+    {
+      "step": 59,
+      "timeUtc": "2026-04-16T05:30:00Z",
+      "minTec": 1.802,
+      "maxTec": 78.678,
+      "meanTec": 21.969,
+      "count": 6552
+    },
+    {
+      "step": 60,
+      "timeUtc": "2026-04-16T06:00:00Z",
+      "minTec": 1.029,
+      "maxTec": 82.392,
+      "meanTec": 22.156,
+      "count": 6552
+    },
+    {
+      "step": 61,
+      "timeUtc": "2026-04-16T06:30:00Z",
+      "minTec": 1.802,
+      "maxTec": 81.593,
+      "meanTec": 22.191,
+      "count": 6552
+    },
+    {
+      "step": 62,
+      "timeUtc": "2026-04-16T07:00:00Z",
+      "minTec": 2.575,
+      "maxTec": 80.82,
+      "meanTec": 22.226,
+      "count": 6552
+    },
+    {
+      "step": 63,
+      "timeUtc": "2026-04-16T07:30:00Z",
+      "minTec": 3.099,
+      "maxTec": 80.048,
+      "meanTec": 22.261,
+      "count": 6552
+    },
+    {
+      "step": 64,
+      "timeUtc": "2026-04-16T08:00:00Z",
+      "minTec": 3.094,
+      "maxTec": 81.249,
+      "meanTec": 22.297,
+      "count": 6552
+    },
+    {
+      "step": 65,
+      "timeUtc": "2026-04-16T08:30:00Z",
+      "minTec": 3.096,
+      "maxTec": 80.992,
+      "meanTec": 22.183,
+      "count": 6552
+    },
+    {
+      "step": 66,
+      "timeUtc": "2026-04-16T09:00:00Z",
+      "minTec": 3.098,
+      "maxTec": 80.831,
+      "meanTec": 22.087,
+      "count": 6552
+    },
+    {
+      "step": 67,
+      "timeUtc": "2026-04-16T09:30:00Z",
+      "minTec": 3.098,
+      "maxTec": 80.573,
+      "meanTec": 21.974,
+      "count": 6552
+    },
+    {
+      "step": 68,
+      "timeUtc": "2026-04-16T10:00:00Z",
+      "minTec": 3.093,
+      "maxTec": 80.316,
+      "meanTec": 21.86,
+      "count": 6552
+    },
+    {
+      "step": 69,
+      "timeUtc": "2026-04-16T10:30:00Z",
+      "minTec": 3.1,
+      "maxTec": 79.544,
+      "meanTec": 21.691,
+      "count": 6552
+    },
+    {
+      "step": 70,
+      "timeUtc": "2026-04-16T11:00:00Z",
+      "minTec": 3.1,
+      "maxTec": 78.771,
+      "meanTec": 21.522,
+      "count": 6552
+    },
+    {
+      "step": 71,
+      "timeUtc": "2026-04-16T11:30:00Z",
+      "minTec": 3.1,
+      "maxTec": 78.514,
+      "meanTec": 21.353,
+      "count": 6552
+    },
+    {
+      "step": 72,
+      "timeUtc": "2026-04-16T12:00:00Z",
+      "minTec": 3.102,
+      "maxTec": 78.422,
+      "meanTec": 21.215,
+      "count": 6552
+    },
+    {
+      "step": 73,
+      "timeUtc": "2026-04-16T12:30:00Z",
+      "minTec": 4.136,
+      "maxTec": 76.358,
+      "meanTec": 21.157,
+      "count": 6552
+    },
+    {
+      "step": 74,
+      "timeUtc": "2026-04-16T13:00:00Z",
+      "minTec": 4.136,
+      "maxTec": 74.295,
+      "meanTec": 21.1,
+      "count": 6552
+    },
+    {
+      "step": 75,
+      "timeUtc": "2026-04-16T13:30:00Z",
+      "minTec": 4.136,
+      "maxTec": 73.263,
+      "meanTec": 21.042,
+      "count": 6552
+    },
+    {
+      "step": 76,
+      "timeUtc": "2026-04-16T14:00:00Z",
+      "minTec": 4.133,
+      "maxTec": 72.235,
+      "meanTec": 20.984,
+      "count": 6552
+    },
+    {
+      "step": 77,
+      "timeUtc": "2026-04-16T14:30:00Z",
+      "minTec": 3.875,
+      "maxTec": 69.909,
+      "meanTec": 20.985,
+      "count": 6552
+    },
+    {
+      "step": 78,
+      "timeUtc": "2026-04-16T15:00:00Z",
+      "minTec": 3.617,
+      "maxTec": 67.587,
+      "meanTec": 20.986,
+      "count": 6552
+    },
+    {
+      "step": 79,
+      "timeUtc": "2026-04-16T15:30:00Z",
+      "minTec": 2.842,
+      "maxTec": 65.266,
+      "meanTec": 20.986,
+      "count": 6552
+    },
+    {
+      "step": 80,
+      "timeUtc": "2026-04-16T16:00:00Z",
+      "minTec": 2.067,
+      "maxTec": 67.075,
+      "meanTec": 20.987,
+      "count": 6552
+    },
+    {
+      "step": 81,
+      "timeUtc": "2026-04-16T16:30:00Z",
+      "minTec": 2.067,
+      "maxTec": 65.785,
+      "meanTec": 20.982,
+      "count": 6552
+    },
+    {
+      "step": 82,
+      "timeUtc": "2026-04-16T17:00:00Z",
+      "minTec": 2.067,
+      "maxTec": 66.043,
+      "meanTec": 20.977,
+      "count": 6552
+    },
+    {
+      "step": 83,
+      "timeUtc": "2026-04-16T17:30:00Z",
+      "minTec": 2.067,
+      "maxTec": 68.365,
+      "meanTec": 20.972,
+      "count": 6552
+    },
+    {
+      "step": 84,
+      "timeUtc": "2026-04-16T18:00:00Z",
+      "minTec": 2.067,
+      "maxTec": 71.276,
+      "meanTec": 20.967,
+      "count": 6552
+    },
+    {
+      "step": 85,
+      "timeUtc": "2026-04-16T18:30:00Z",
+      "minTec": 2.068,
+      "maxTec": 73.342,
+      "meanTec": 20.89,
+      "count": 6552
+    },
+    {
+      "step": 86,
+      "timeUtc": "2026-04-16T19:00:00Z",
+      "minTec": 2.068,
+      "maxTec": 75.408,
+      "meanTec": 20.813,
+      "count": 6552
+    },
+    {
+      "step": 87,
+      "timeUtc": "2026-04-16T19:30:00Z",
+      "minTec": 1.551,
+      "maxTec": 77.977,
+      "meanTec": 20.736,
+      "count": 6552
+    },
+    {
+      "step": 88,
+      "timeUtc": "2026-04-16T20:00:00Z",
+      "minTec": 1.034,
+      "maxTec": 81.563,
+      "meanTec": 20.658,
+      "count": 6552
+    },
+    {
+      "step": 89,
+      "timeUtc": "2026-04-16T20:30:00Z",
+      "minTec": 1.551,
+      "maxTec": 81.821,
+      "meanTec": 20.591,
+      "count": 6552
+    },
+    {
+      "step": 90,
+      "timeUtc": "2026-04-16T21:00:00Z",
+      "minTec": 2.066,
+      "maxTec": 81.934,
+      "meanTec": 20.493,
+      "count": 6552
+    },
+    {
+      "step": 91,
+      "timeUtc": "2026-04-16T21:30:00Z",
+      "minTec": 2.066,
+      "maxTec": 82.191,
+      "meanTec": 20.426,
+      "count": 6552
+    },
+    {
+      "step": 92,
+      "timeUtc": "2026-04-16T22:00:00Z",
+      "minTec": 2.06,
+      "maxTec": 82.449,
+      "meanTec": 20.359,
+      "count": 6552
+    },
+    {
+      "step": 93,
+      "timeUtc": "2026-04-16T22:30:00Z",
+      "minTec": 2.06,
+      "maxTec": 82.449,
+      "meanTec": 20.359,
+      "count": 6552
+    },
+    {
+      "step": 94,
+      "timeUtc": "2026-04-16T23:00:00Z",
+      "minTec": 2.06,
+      "maxTec": 82.449,
+      "meanTec": 20.359,
+      "count": 6552
+    },
+    {
+      "step": 95,
+      "timeUtc": "2026-04-16T23:30:00Z",
+      "minTec": 2.06,
+      "maxTec": 82.449,
+      "meanTec": 20.359,
+      "count": 6552
+    },
+    {
+      "step": 96,
+      "timeUtc": "2026-04-17T00:00:00Z",
+      "minTec": 2.109,
+      "maxTec": 78.47,
+      "meanTec": 20.676,
+      "count": 6552
+    },
+    {
+      "step": 97,
+      "timeUtc": "2026-04-17T00:30:00Z",
+      "minTec": 2.109,
+      "maxTec": 75.349,
+      "meanTec": 20.853,
+      "count": 6552
+    },
+    {
+      "step": 98,
+      "timeUtc": "2026-04-17T01:00:00Z",
+      "minTec": 2.109,
+      "maxTec": 74.552,
+      "meanTec": 21.031,
+      "count": 6552
+    },
+    {
+      "step": 99,
+      "timeUtc": "2026-04-17T01:30:00Z",
+      "minTec": 2.109,
+      "maxTec": 78.046,
+      "meanTec": 21.209,
+      "count": 6552
+    },
+    {
+      "step": 100,
+      "timeUtc": "2026-04-17T02:00:00Z",
+      "minTec": 2.109,
+      "maxTec": 82.443,
+      "meanTec": 21.387,
+      "count": 6552
+    },
+    {
+      "step": 101,
+      "timeUtc": "2026-04-17T02:30:00Z",
+      "minTec": 2.128,
+      "maxTec": 79.97,
+      "meanTec": 21.662,
+      "count": 6552
+    },
+    {
+      "step": 102,
+      "timeUtc": "2026-04-17T03:00:00Z",
+      "minTec": 2.06,
+      "maxTec": 74.069,
+      "meanTec": 20.887,
+      "count": 6552
+    },
+    {
+      "step": 103,
+      "timeUtc": "2026-04-17T03:30:00Z",
+      "minTec": 1.545,
+      "maxTec": 74.828,
+      "meanTec": 21.148,
+      "count": 6552
+    },
+    {
+      "step": 104,
+      "timeUtc": "2026-04-17T04:00:00Z",
+      "minTec": 1.028,
+      "maxTec": 77.135,
+      "meanTec": 21.409,
+      "count": 6552
+    },
+    {
+      "step": 105,
+      "timeUtc": "2026-04-17T04:30:00Z",
+      "minTec": 1.287,
+      "maxTec": 77.649,
+      "meanTec": 21.596,
+      "count": 6552
+    },
+    {
+      "step": 106,
+      "timeUtc": "2026-04-17T05:00:00Z",
+      "minTec": 1.545,
+      "maxTec": 78.163,
+      "meanTec": 21.782,
+      "count": 6552
+    },
+    {
+      "step": 107,
+      "timeUtc": "2026-04-17T05:30:00Z",
+      "minTec": 1.802,
+      "maxTec": 78.678,
+      "meanTec": 21.969,
+      "count": 6552
+    },
+    {
+      "step": 108,
+      "timeUtc": "2026-04-17T06:00:00Z",
+      "minTec": 1.029,
+      "maxTec": 82.392,
+      "meanTec": 22.156,
+      "count": 6552
+    },
+    {
+      "step": 109,
+      "timeUtc": "2026-04-17T06:30:00Z",
+      "minTec": 1.802,
+      "maxTec": 81.593,
+      "meanTec": 22.191,
+      "count": 6552
+    },
+    {
+      "step": 110,
+      "timeUtc": "2026-04-17T07:00:00Z",
+      "minTec": 2.575,
+      "maxTec": 80.82,
+      "meanTec": 22.226,
+      "count": 6552
+    },
+    {
+      "step": 111,
+      "timeUtc": "2026-04-17T07:30:00Z",
+      "minTec": 3.099,
+      "maxTec": 80.048,
+      "meanTec": 22.261,
+      "count": 6552
+    },
+    {
+      "step": 112,
+      "timeUtc": "2026-04-17T08:00:00Z",
+      "minTec": 3.094,
+      "maxTec": 81.249,
+      "meanTec": 22.297,
+      "count": 6552
+    },
+    {
+      "step": 113,
+      "timeUtc": "2026-04-17T08:30:00Z",
+      "minTec": 3.096,
+      "maxTec": 80.992,
+      "meanTec": 22.183,
+      "count": 6552
+    },
+    {
+      "step": 114,
+      "timeUtc": "2026-04-17T09:00:00Z",
+      "minTec": 3.046,
+      "maxTec": 77.952,
+      "meanTec": 21.559,
+      "count": 6552
+    },
+    {
+      "step": 115,
+      "timeUtc": "2026-04-17T09:30:00Z",
+      "minTec": 3.046,
+      "maxTec": 77.704,
+      "meanTec": 21.448,
+      "count": 6552
+    },
+    {
+      "step": 116,
+      "timeUtc": "2026-04-17T10:00:00Z",
+      "minTec": 3.008,
+      "maxTec": 77.456,
+      "meanTec": 21.336,
+      "count": 6552
+    },
+    {
+      "step": 117,
+      "timeUtc": "2026-04-17T10:30:00Z",
+      "minTec": 3.064,
+      "maxTec": 76.711,
+      "meanTec": 21.171,
+      "count": 6552
+    },
+    {
+      "step": 118,
+      "timeUtc": "2026-04-17T11:00:00Z",
+      "minTec": 3.064,
+      "maxTec": 75.966,
+      "meanTec": 21.006,
+      "count": 6552
+    },
+    {
+      "step": 119,
+      "timeUtc": "2026-04-17T11:30:00Z",
+      "minTec": 3.064,
+      "maxTec": 75.718,
+      "meanTec": 20.841,
+      "count": 6552
+    },
+    {
+      "step": 120,
+      "timeUtc": "2026-04-17T12:00:00Z",
+      "minTec": 3.074,
+      "maxTec": 76.189,
+      "meanTec": 20.814,
+      "count": 6552
+    },
+    {
+      "step": 121,
+      "timeUtc": "2026-04-17T12:30:00Z",
+      "minTec": 4.103,
+      "maxTec": 74.184,
+      "meanTec": 20.757,
+      "count": 6552
+    },
+    {
+      "step": 122,
+      "timeUtc": "2026-04-17T13:00:00Z",
+      "minTec": 4.103,
+      "maxTec": 72.179,
+      "meanTec": 20.699,
+      "count": 6552
+    },
+    {
+      "step": 123,
+      "timeUtc": "2026-04-17T13:30:00Z",
+      "minTec": 4.103,
+      "maxTec": 71.176,
+      "meanTec": 20.641,
+      "count": 6552
+    },
+    {
+      "step": 124,
+      "timeUtc": "2026-04-17T14:00:00Z",
+      "minTec": 4.063,
+      "maxTec": 70.214,
+      "meanTec": 20.584,
+      "count": 6552
+    },
+    {
+      "step": 125,
+      "timeUtc": "2026-04-17T14:30:00Z",
+      "minTec": 3.822,
+      "maxTec": 67.918,
+      "meanTec": 20.584,
+      "count": 6552
+    },
+    {
+      "step": 126,
+      "timeUtc": "2026-04-17T15:00:00Z",
+      "minTec": 3.768,
+      "maxTec": 75.416,
+      "meanTec": 22.617,
+      "count": 6552
+    },
+    {
+      "step": 127,
+      "timeUtc": "2026-04-17T15:30:00Z",
+      "minTec": 2.96,
+      "maxTec": 72.87,
+      "meanTec": 22.619,
+      "count": 6552
+    },
+    {
+      "step": 128,
+      "timeUtc": "2026-04-17T16:00:00Z",
+      "minTec": 2.135,
+      "maxTec": 74.886,
+      "meanTec": 22.621,
+      "count": 6552
+    },
+    {
+      "step": 129,
+      "timeUtc": "2026-04-17T16:30:00Z",
+      "minTec": 2.153,
+      "maxTec": 73.269,
+      "meanTec": 22.618,
+      "count": 6552
+    },
+    {
+      "step": 130,
+      "timeUtc": "2026-04-17T17:00:00Z",
+      "minTec": 2.153,
+      "maxTec": 73.556,
+      "meanTec": 22.614,
+      "count": 6552
+    },
+    {
+      "step": 131,
+      "timeUtc": "2026-04-17T17:30:00Z",
+      "minTec": 2.153,
+      "maxTec": 76.142,
+      "meanTec": 22.61,
+      "count": 6552
+    },
+    {
+      "step": 132,
+      "timeUtc": "2026-04-17T18:00:00Z",
+      "minTec": 2.309,
+      "maxTec": 100.154,
+      "meanTec": 26.825,
+      "count": 6552
+    },
+    {
+      "step": 133,
+      "timeUtc": "2026-04-17T18:30:00Z",
+      "minTec": 2.318,
+      "maxTec": 102.332,
+      "meanTec": 26.73,
+      "count": 6552
+    },
+    {
+      "step": 134,
+      "timeUtc": "2026-04-17T19:00:00Z",
+      "minTec": 2.318,
+      "maxTec": 104.509,
+      "meanTec": 26.634,
+      "count": 6552
+    },
+    {
+      "step": 135,
+      "timeUtc": "2026-04-17T19:30:00Z",
+      "minTec": 1.756,
+      "maxTec": 106.686,
+      "meanTec": 26.539,
+      "count": 6552
+    },
+    {
+      "step": 136,
+      "timeUtc": "2026-04-17T20:00:00Z",
+      "minTec": 1.171,
+      "maxTec": 110.864,
+      "meanTec": 26.443,
+      "count": 6552
+    },
+    {
+      "step": 137,
+      "timeUtc": "2026-04-17T20:30:00Z",
+      "minTec": 1.756,
+      "maxTec": 111.215,
+      "meanTec": 26.359,
+      "count": 6552
+    },
+    {
+      "step": 138,
+      "timeUtc": "2026-04-17T21:00:00Z",
+      "minTec": 2.452,
+      "maxTec": 127.555,
+      "meanTec": 29.452,
+      "count": 6552
+    },
+    {
+      "step": 139,
+      "timeUtc": "2026-04-17T21:30:00Z",
+      "minTec": 2.452,
+      "maxTec": 128.049,
+      "meanTec": 29.359,
+      "count": 6552
+    },
+    {
+      "step": 140,
+      "timeUtc": "2026-04-17T22:00:00Z",
+      "minTec": 2.45,
+      "maxTec": 128.886,
+      "meanTec": 29.266,
+      "count": 6552
+    },
+    {
+      "step": 141,
+      "timeUtc": "2026-04-17T22:30:00Z",
+      "minTec": 2.45,
+      "maxTec": 128.886,
+      "meanTec": 29.266,
+      "count": 6552
+    },
+    {
+      "step": 142,
+      "timeUtc": "2026-04-17T23:00:00Z",
+      "minTec": 2.45,
+      "maxTec": 128.886,
+      "meanTec": 29.266,
+      "count": 6552
+    },
+    {
+      "step": 143,
+      "timeUtc": "2026-04-17T23:30:00Z",
+      "minTec": 2.45,
+      "maxTec": 128.886,
+      "meanTec": 29.266,
+      "count": 6552
+    },
+    {
+      "step": 144,
+      "timeUtc": "2026-04-18T00:00:00Z",
+      "minTec": 2.556,
+      "maxTec": 135.49,
+      "meanTec": 30.961,
+      "count": 6552
+    },
+    {
+      "step": 145,
+      "timeUtc": "2026-04-18T00:30:00Z",
+      "minTec": 2.557,
+      "maxTec": 128.81,
+      "meanTec": 31.239,
+      "count": 6552
+    },
+    {
+      "step": 146,
+      "timeUtc": "2026-04-18T01:00:00Z",
+      "minTec": 2.557,
+      "maxTec": 126.295,
+      "meanTec": 31.517,
+      "count": 6552
+    },
+    {
+      "step": 147,
+      "timeUtc": "2026-04-18T01:30:00Z",
+      "minTec": 2.557,
+      "maxTec": 130.272,
+      "meanTec": 31.794,
+      "count": 6552
+    },
+    {
+      "step": 148,
+      "timeUtc": "2026-04-18T02:00:00Z",
+      "minTec": 2.557,
+      "maxTec": 138.21,
+      "meanTec": 32.072,
+      "count": 6552
+    },
+    {
+      "step": 149,
+      "timeUtc": "2026-04-18T02:30:00Z",
+      "minTec": 2.791,
+      "maxTec": 136.444,
+      "meanTec": 32.489,
+      "count": 6552
+    },
+    {
+      "step": 150,
+      "timeUtc": "2026-04-18T03:00:00Z",
+      "minTec": 2.66,
+      "maxTec": 122.729,
+      "meanTec": 30.35,
+      "count": 6552
+    },
+    {
+      "step": 151,
+      "timeUtc": "2026-04-18T03:30:00Z",
+      "minTec": 2.074,
+      "maxTec": 123.581,
+      "meanTec": 30.733,
+      "count": 6552
+    },
+    {
+      "step": 152,
+      "timeUtc": "2026-04-18T04:00:00Z",
+      "minTec": 1.382,
+      "maxTec": 127.843,
+      "meanTec": 31.116,
+      "count": 6552
+    },
+    {
+      "step": 153,
+      "timeUtc": "2026-04-18T04:30:00Z",
+      "minTec": 1.767,
+      "maxTec": 128.695,
+      "meanTec": 31.369,
+      "count": 6552
+    },
+    {
+      "step": 154,
+      "timeUtc": "2026-04-18T05:00:00Z",
+      "minTec": 2.121,
+      "maxTec": 129.547,
+      "meanTec": 31.622,
+      "count": 6552
+    },
+    {
+      "step": 155,
+      "timeUtc": "2026-04-18T05:30:00Z",
+      "minTec": 2.474,
+      "maxTec": 130.4,
+      "meanTec": 31.875,
+      "count": 6552
+    },
+    {
+      "step": 156,
+      "timeUtc": "2026-04-18T06:00:00Z",
+      "minTec": 1.358,
+      "maxTec": 111.967,
+      "meanTec": 28.355,
+      "count": 6552
+    },
+    {
+      "step": 157,
+      "timeUtc": "2026-04-18T06:30:00Z",
+      "minTec": 2.376,
+      "maxTec": 111.259,
+      "meanTec": 28.388,
+      "count": 6552
+    },
+    {
+      "step": 158,
+      "timeUtc": "2026-04-18T07:00:00Z",
+      "minTec": 3.395,
+      "maxTec": 110.55,
+      "meanTec": 28.421,
+      "count": 6552
+    },
+    {
+      "step": 159,
+      "timeUtc": "2026-04-18T07:30:00Z",
+      "minTec": 3.48,
+      "maxTec": 110.848,
+      "meanTec": 28.454,
+      "count": 6552
+    },
+    {
+      "step": 160,
+      "timeUtc": "2026-04-18T08:00:00Z",
+      "minTec": 3.48,
+      "maxTec": 114.471,
+      "meanTec": 28.487,
+      "count": 6552
+    },
+    {
+      "step": 161,
+      "timeUtc": "2026-04-18T08:30:00Z",
+      "minTec": 3.697,
+      "maxTec": 114.109,
+      "meanTec": 28.34,
+      "count": 6552
+    },
+    {
+      "step": 162,
+      "timeUtc": "2026-04-18T09:00:00Z",
+      "minTec": 3.464,
+      "maxTec": 101.44,
+      "meanTec": 25.874,
+      "count": 6552
+    },
+    {
+      "step": 163,
+      "timeUtc": "2026-04-18T09:30:00Z",
+      "minTec": 3.464,
+      "maxTec": 101.117,
+      "meanTec": 25.74,
+      "count": 6552
+    },
+    {
+      "step": 164,
+      "timeUtc": "2026-04-18T10:00:00Z",
+      "minTec": 3.331,
+      "maxTec": 100.906,
+      "meanTec": 25.605,
+      "count": 6552
+    },
+    {
+      "step": 165,
+      "timeUtc": "2026-04-18T10:30:00Z",
+      "minTec": 3.342,
+      "maxTec": 99.824,
+      "meanTec": 25.41,
+      "count": 6552
+    },
+    {
+      "step": 166,
+      "timeUtc": "2026-04-18T11:00:00Z",
+      "minTec": 3.342,
+      "maxTec": 98.855,
+      "meanTec": 25.214,
+      "count": 6552
+    },
+    {
+      "step": 167,
+      "timeUtc": "2026-04-18T11:30:00Z",
+      "minTec": 3.342,
+      "maxTec": 98.532,
+      "meanTec": 25.019,
+      "count": 6552
+    },
+    {
+      "step": 168,
+      "timeUtc": "2026-04-18T12:00:00Z",
+      "minTec": 3.355,
+      "maxTec": 100.347,
+      "meanTec": 25.15,
+      "count": 6552
+    },
+    {
+      "step": 169,
+      "timeUtc": "2026-04-18T12:30:00Z",
+      "minTec": 4.458,
+      "maxTec": 97.706,
+      "meanTec": 25.091,
+      "count": 6552
+    },
+    {
+      "step": 170,
+      "timeUtc": "2026-04-18T13:00:00Z",
+      "minTec": 4.458,
+      "maxTec": 95.066,
+      "meanTec": 25.032,
+      "count": 6552
+    },
+    {
+      "step": 171,
+      "timeUtc": "2026-04-18T13:30:00Z",
+      "minTec": 4.458,
+      "maxTec": 93.745,
+      "meanTec": 24.973,
+      "count": 6552
+    },
+    {
+      "step": 172,
+      "timeUtc": "2026-04-18T14:00:00Z",
+      "minTec": 4.458,
+      "maxTec": 92.425,
+      "meanTec": 24.914,
+      "count": 6552
+    },
+    {
+      "step": 173,
+      "timeUtc": "2026-04-18T14:30:00Z",
+      "minTec": 4.263,
+      "maxTec": 89.454,
+      "meanTec": 24.919,
+      "count": 6552
+    },
+    {
+      "step": 174,
+      "timeUtc": "2026-04-18T15:00:00Z",
+      "minTec": 3.9,
+      "maxTec": 82.356,
+      "meanTec": 24.063,
+      "count": 6552
+    },
+    {
+      "step": 175,
+      "timeUtc": "2026-04-18T15:30:00Z",
+      "minTec": 3.064,
+      "maxTec": 79.612,
+      "meanTec": 24.067,
+      "count": 6552
+    },
+    {
+      "step": 176,
+      "timeUtc": "2026-04-18T16:00:00Z",
+      "minTec": 2.195,
+      "maxTec": 81.815,
+      "meanTec": 24.071,
+      "count": 6552
+    },
+    {
+      "step": 177,
+      "timeUtc": "2026-04-18T16:30:00Z",
+      "minTec": 2.228,
+      "maxTec": 79.927,
+      "meanTec": 24.068,
+      "count": 6552
+    },
+    {
+      "step": 178,
+      "timeUtc": "2026-04-18T17:00:00Z",
+      "minTec": 2.228,
+      "maxTec": 80.217,
+      "meanTec": 24.065,
+      "count": 6552
+    },
+    {
+      "step": 179,
+      "timeUtc": "2026-04-18T17:30:00Z",
+      "minTec": 2.228,
+      "maxTec": 83.037,
+      "meanTec": 24.062,
+      "count": 6552
+    },
+    {
+      "step": 180,
+      "timeUtc": "2026-04-18T18:00:00Z",
+      "minTec": 2.164,
+      "maxTec": 82.711,
+      "meanTec": 23.295,
+      "count": 6552
+    },
+    {
+      "step": 181,
+      "timeUtc": "2026-04-18T18:30:00Z",
+      "minTec": 2.167,
+      "maxTec": 84.509,
+      "meanTec": 23.211,
+      "count": 6552
+    },
+    {
+      "step": 182,
+      "timeUtc": "2026-04-18T19:00:00Z",
+      "minTec": 2.167,
+      "maxTec": 86.307,
+      "meanTec": 23.126,
+      "count": 6552
+    },
+    {
+      "step": 183,
+      "timeUtc": "2026-04-18T19:30:00Z",
+      "minTec": 1.633,
+      "maxTec": 88.483,
+      "meanTec": 23.042,
+      "count": 6552
+    },
+    {
+      "step": 184,
+      "timeUtc": "2026-04-18T20:00:00Z",
+      "minTec": 1.088,
+      "maxTec": 93.202,
+      "meanTec": 22.957,
+      "count": 6552
+    },
+    {
+      "step": 185,
+      "timeUtc": "2026-04-18T20:30:00Z",
+      "minTec": 1.633,
+      "maxTec": 93.497,
+      "meanTec": 22.884,
+      "count": 6552
+    },
+    {
+      "step": 186,
+      "timeUtc": "2026-04-18T21:00:00Z",
+      "minTec": 2.26,
+      "maxTec": 104.885,
+      "meanTec": 25.001,
+      "count": 6552
+    },
+    {
+      "step": 187,
+      "timeUtc": "2026-04-18T21:30:00Z",
+      "minTec": 2.26,
+      "maxTec": 105.215,
+      "meanTec": 24.92,
+      "count": 6552
+    },
+    {
+      "step": 188,
+      "timeUtc": "2026-04-18T22:00:00Z",
+      "minTec": 2.259,
+      "maxTec": 105.544,
+      "meanTec": 24.84,
+      "count": 6552
+    },
+    {
+      "step": 189,
+      "timeUtc": "2026-04-18T22:30:00Z",
+      "minTec": 2.259,
+      "maxTec": 105.544,
+      "meanTec": 24.84,
+      "count": 6552
+    },
+    {
+      "step": 190,
+      "timeUtc": "2026-04-18T23:00:00Z",
+      "minTec": 2.259,
+      "maxTec": 105.544,
+      "meanTec": 24.84,
+      "count": 6552
+    },
+    {
+      "step": 191,
+      "timeUtc": "2026-04-18T23:30:00Z",
+      "minTec": 2.259,
+      "maxTec": 105.544,
+      "meanTec": 24.84,
+      "count": 6552
+    },
+    {
+      "step": 192,
+      "timeUtc": "2026-04-19T00:00:00Z",
+      "minTec": 2.556,
+      "maxTec": 135.49,
+      "meanTec": 30.961,
+      "count": 6552
+    }
+  ]
+}

@@ -1,6 +1,23 @@
 {
-  "updatedAt": "2026-04-22T03:55:44.178Z",
+  "updatedAt": "2026-04-23T04:01:00.343Z",
   "runs": [
+    {
+      "dayKey": "2026-04-23",
+      "summaryPath": "./archive/2026/2026-04-23/summary.json",
+      "metaPath": "./archive/2026/2026-04-23/meta.json",
+      "csvPath": "./archive/2026/2026-04-23/tec_4day.csv",
+      "forecastStartUtc": "2026-04-22T00:00:00.000Z",
+      "forecastEndUtc": "2026-04-26T00:00:00Z",
+      "source": "noaa",
+      "noaaDayKey": "2026-04-22",
+      "overall": {
+        "minTec": 1.005,
+        "maxTec": 94.557,
+        "maxTecTimeUtc": "2026-04-24T06:00:00Z",
+        "frameCount": 193,
+        "gridPointCount": 6552
+      }
+    },
     {
       "dayKey": "2026-04-22",
       "summaryPath": "./archive/2026/2026-04-22/summary.json",
@@ -31,23 +48,6 @@
         "minTec": 0.796,
         "maxTec": 87.513,
         "maxTecTimeUtc": "2026-04-20T20:00:00Z",
-        "frameCount": 193,
-        "gridPointCount": 6552
-      }
-    },
-    {
-      "dayKey": "2026-04-20",
-      "summaryPath": "./archive/2026/2026-04-20/summary.json",
-      "metaPath": "./archive/2026/2026-04-20/meta.json",
-      "csvPath": "./archive/2026/2026-04-20/tec_4day.csv",
-      "forecastStartUtc": "2026-04-19T00:00:00.000Z",
-      "forecastEndUtc": "2026-04-23T00:00:00Z",
-      "source": "noaa",
-      "noaaDayKey": "2026-04-19",
-      "overall": {
-        "minTec": 0,
-        "maxTec": 84.284,
-        "maxTecTimeUtc": "2026-04-19T20:00:00Z",
         "frameCount": 193,
         "gridPointCount": 6552
       }

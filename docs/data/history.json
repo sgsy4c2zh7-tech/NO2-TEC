@@ -1,6 +1,23 @@
 {
-  "updatedAt": "2026-08-20T02:09:48.051Z",
+  "updatedAt": "2026-08-21T02:16:01.016Z",
   "runs": [
+    {
+      "dayKey": "2026-08-21",
+      "summaryPath": "./archive/2026/2026-08-21/summary.json",
+      "metaPath": "./archive/2026/2026-08-21/meta.json",
+      "csvPath": "./archive/2026/2026-08-21/tec_4day.csv",
+      "forecastStartUtc": "2026-08-20T00:00:00.000Z",
+      "forecastEndUtc": "2026-08-24T00:00:00Z",
+      "source": "noaa",
+      "noaaDayKey": "2026-08-20",
+      "overall": {
+        "minTec": 0.962,
+        "maxTec": 71.049,
+        "maxTecTimeUtc": "2026-08-20T10:00:00Z",
+        "frameCount": 193,
+        "gridPointCount": 6552
+      }
+    },
     {
       "dayKey": "2026-08-20",
       "summaryPath": "./archive/2026/2026-08-20/summary.json",

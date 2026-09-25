@@ -1,6 +1,23 @@
 {
-  "updatedAt": "2026-09-23T05:20:52.843Z",
+  "updatedAt": "2026-09-25T05:33:18.796Z",
   "runs": [
+    {
+      "dayKey": "2026-09-25",
+      "summaryPath": "./archive/2026/2026-09-25/summary.json",
+      "metaPath": "./archive/2026/2026-09-25/meta.json",
+      "csvPath": "./archive/2026/2026-09-25/tec_4day.csv",
+      "forecastStartUtc": "2026-09-24T00:00:00.000Z",
+      "forecastEndUtc": "2026-09-28T00:00:00Z",
+      "source": "noaa",
+      "noaaDayKey": "2026-09-24",
+      "overall": {
+        "minTec": 1.788,
+        "maxTec": 77.194,
+        "maxTecTimeUtc": "2026-09-24T12:00:00Z",
+        "frameCount": 193,
+        "gridPointCount": 6552
+      }
+    },
     {
       "dayKey": "2026-09-23",
       "summaryPath": "./archive/2026/2026-09-23/summary.json",
@@ -14,40 +31,6 @@
         "minTec": 1.031,
         "maxTec": 115.98,
         "maxTecTimeUtc": "2026-09-24T05:30:00Z",
-        "frameCount": 193,
-        "gridPointCount": 6552
-      }
-    },
-    {
-      "dayKey": "2026-09-22",
-      "summaryPath": "./archive/2026/2026-09-22/summary.json",
-      "metaPath": "./archive/2026/2026-09-22/meta.json",
-      "csvPath": "./archive/2026/2026-09-22/tec_4day.csv",
-      "forecastStartUtc": "2026-09-21T00:00:00.000Z",
-      "forecastEndUtc": "2026-09-25T00:00:00Z",
-      "source": "noaa",
-      "noaaDayKey": "2026-09-21",
-      "overall": {
-        "minTec": 1.034,
-        "maxTec": 126.692,
-        "maxTecTimeUtc": "2026-09-24T05:30:00Z",
-        "frameCount": 193,
-        "gridPointCount": 6552
-      }
-    },
-    {
-      "dayKey": "2026-09-21",
-      "summaryPath": "./archive/2026/2026-09-21/summary.json",
-      "metaPath": "./archive/2026/2026-09-21/meta.json",
-      "csvPath": "./archive/2026/2026-09-21/tec_4day.csv",
-      "forecastStartUtc": "2026-09-20T00:00:00.000Z",
-      "forecastEndUtc": "2026-09-24T00:00:00Z",
-      "source": "noaa",
-      "noaaDayKey": "2026-09-20",
-      "overall": {
-        "minTec": 1.032,
-        "maxTec": 77.095,
-        "maxTecTimeUtc": "2026-09-22T20:00:00Z",
         "frameCount": 193,
         "gridPointCount": 6552
       }
